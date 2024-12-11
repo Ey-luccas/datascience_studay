@@ -1,0 +1,1 @@
+#Este é o registro do meu aprendizado e evolução. Atualmente, estou cursando um treinament[[DD[Do n[Da Udemy sobre Data Science para Inteligência Artificial. Aqui também compartilharei minhas anotações, testes e experimentos, ou, como prefiro chamar, minhas 'brincadeiras' com o tema.
