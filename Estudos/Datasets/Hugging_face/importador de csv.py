@@ -1,16 +1,12 @@
 from huggingface_hub import HfApi, login
-from datasets import load_dataset
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
+from datasets import load_dataset, get_dataset_config_names
 import pandas as pd
-
-import os
-
+# Realiza login na Hugging Face com o token
 login(token="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")
 api = HfApi()
 curtir_datasets = api.list_liked_repos().datasets
 
-# Verificar se eu curtir kkkkk ou esqueci
+# Verificar se o usuário curtiu algum dataset
 if curtir_datasets:
     print("Datasets curtidos:")
     for i, dataset in enumerate(curtir_datasets):
@@ -18,42 +14,25 @@ if curtir_datasets:
 else:
     print('Rpz...esqueceu de curtir?')
 
+# Obter o ID ou nome do dataset
 idorname = input('Digite o ID ou Nome do dataset: ')
 
-
-
-def baixar_drive_dataset(idorname):
-    if idorname.isdigit(): 
+def baixar_computador(idorname):
+    if idorname.isdigit():
         id = int(idorname)
-        selecao_dataset = curtir_datasets[id - 1]
-        print(f"\nBaixando o dataset '{selecao_dataset}'...")
-        
-        # Carregar o dataset
-        dataset = load_dataset(selecao_dataset)
-        
-        # Converter a divisão 'train' para DataFrame (ou outra divisão, como 'test' ou 'validation')
-        df = pd.DataFrame(dataset['train'])  # Aqui escolhemos a divisão 'train'
-        
-        # Definir o caminho para o arquivo CSV
-        file_path = f"dataset_{selecao_dataset}.csv"
-        
-        # Verificar se o diretório existe, caso contrário, criar
-        if not os.path.exists(os.path.dirname(file_path)):
-            os.makedirs(os.path.dirname(file_path))
-        
-        # Salvar como CSV
-        df.to_csv(file_path, index=False)
-
-        # Autenticação no Google Drive
-        gauth = GoogleAuth()
-        gauth.LocalWebserverAuth()  # Abre o navegador para autenticação
-        drive = GoogleDrive(gauth)
-        file = drive.CreateFile({"title": f"dataset_{selecao_dataset}.csv"})
-        file.SetContentFile(file_path)
-        file.Upload()
-        print(f"Dataset enviado para o Google Drive: {file['title']}")
-        
+        dataset = load_dataset(curtir_datasets[id - 1], cache_dir="C:/Users/eyluc/Documents/ESTUDO -- 'data scientist'/Eydatascience/Estudos/Datasets")
+        print(f"Dataset '{curtir_datasets[id - 1]}' baixado com sucesso.")
     else:
-        print('Entrada inválida.')
+        print("Por favor, insira um número válido.")
 
-baixar_drive_dataset(idorname)
+
+
+s = get_dataset_config_names(curtir_datasets[int(idorname) - 1])
+print(curtir_datasets[int(idorname) - 1])
+if len(s) > 1 : 
+    for index, nameconfig in enumerate(s, 1): 
+        #d = load_dataset(curtir_datasets[int(idorname) - 1], nameconfig) - ({len(d["train"])})
+        print(f'{index} - {nameconfig} ')
+else: 
+    if s: 
+        print('possui apenas uma split: train')
