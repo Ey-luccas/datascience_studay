@@ -1,0 +1,3 @@
+A biblioteca "Search System" funcionará como uma ferramenta de busca de datasets adequados aos objetivos do seu projeto. Após a busca, ela fornecerá uma lista de datasets com uma breve descrição de cada um, além da origem de onde foram encontrados, permitindo uma análise detalhada para que você possa fazer uma escolha informada e consciente.
+
+**Atualizações estarão disponíveis a partir de 1º de fevereiro de 2025.**

@@ -1,0 +1,3 @@
+A biblioteca "Chat System" foi criada para auxiliar desenvolvedores de modelos de linguagem (LLMs) na validação da adequação de seus sistemas para utilização como chatbots. Ela permite a identificação de possíveis melhorias por meio de análises técnicas detalhadas e ajusta a porta de dados para o modelo treinado, otimizando sua funcionalidade.  
+
+**Atualizações estarão disponíveis a partir de 1º de fevereiro de 2025.**

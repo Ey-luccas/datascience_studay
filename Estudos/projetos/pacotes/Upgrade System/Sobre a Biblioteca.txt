@@ -1,0 +1,3 @@
+A biblioteca "Upgrade System" tem como objetivo buscar datasets no seu Google Drive ou realizar o upgrade diretamente no seu computador. Após o processo, você poderá salvar as atualizações de maneira eficiente e organizada.
+
+**Atualizações estarão disponíveis a partir de 1º de fevereiro de 2025.**

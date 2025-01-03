@@ -1,0 +1,3 @@
+A biblioteca "Analysis System" foi desenvolvida para realizar a análise de datasets selecionados pelo usuário, avaliando sua adequação aos objetivos e à direção do projeto.
+
+**Atualizações estarão disponíveis a partir de 1º de fevereiro de 2025.**
